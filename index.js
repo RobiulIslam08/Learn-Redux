@@ -27,9 +27,16 @@ const decrementCounter = () =>{
 const counterReducer = (state=  initialCounterState, action) =>{
 	switch(action.type){
 		case INCREMENT:
-			return {
-				...state
-				// ...state multipul state এর ক্ষেত্রে আমরা spread করে নিতে পারি।  তারপর যে state নিয়ে কাজ করবো সেটা define করে দিবো 
+			return {			
+				// ...state multipul state এর ক্ষেত্রে আমরা spread করে নিতে পারি।  তারপর যে state নিয়ে কাজ করবো সেটা define করে দিবো
+				...state,
+				count: state.count + 1 
+			};
+		case DECREMENT:
+			return {			
+				// ...state multipul state এর ক্ষেত্রে আমরা spread করে নিতে পারি।  তারপর যে state নিয়ে কাজ করবো সেটা define করে দিবো
+				...state,
+				count: state.count - 1 
 			}
 	}
 }
