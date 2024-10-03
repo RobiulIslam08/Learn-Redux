@@ -38,5 +38,7 @@ const counterReducer = (state=  initialCounterState, action) =>{
 				...state,
 				count: state.count - 1 
 			}
+		default:
+			 state
 	}
 }
