@@ -4,6 +4,7 @@ const DECREMENT = DECREMENT;
 
 //  প্রথমে state initialize করতে হবে
 // state
+
 const initialCounterState ={
 	count: 0,
 }
@@ -24,7 +25,7 @@ const decrementCounter = () =>{
 
 // create reducer for counter
 
-const counterReducer = (state=  initialCounterState, action) =>{
+const counterReducer = (state=initialCounterState, action) =>{
 	switch(action.type){
 		case INCREMENT:
 			return {			
