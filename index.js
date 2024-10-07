@@ -1,5 +1,7 @@
-const INCREMENT = INCREMENT;
-const DECREMENT = DECREMENT;
+const { createStore } = require("redux");
+
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
 
 
 //  প্রথমে state initialize করতে হবে
@@ -43,3 +45,23 @@ const counterReducer = (state=initialCounterState, action) =>{
 			 state
 	}
 }
+
+
+                         //store
+// এখানে যা করা হয়েছে- 
+//create store
+const store = createStore(counterReducer)
+
+store.subscribe(()=>{
+	console.log(store.getState())
+})
+
+//action dispatch
+
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(decrementCounter())
