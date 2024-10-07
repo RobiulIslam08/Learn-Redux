@@ -2,6 +2,9 @@ const { createStore } = require("redux");
 
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
+const RESET = "RESET"
+//for payload
+const INCREMENT_BY_VALUE = 'INCREMENT_BY_VALUE'
 
 
 //  প্রথমে state initialize করতে হবে
@@ -13,17 +16,28 @@ const initialCounterState ={
 
 
 // action - object = type, payload
-const incrementCounter = () =>{
+const incrementCounterAction = () =>{
 	return {
 		type: INCREMENT,
 	}
 }
-const decrementCounter = () =>{
+const decrementCounterAction = () =>{
 	return {
 		type: DECREMENT
 	}
 }
-
+const resetCounterAction = () =>{
+	return {
+		type: RESET
+	}
+}
+//for payload
+const incrementCounterByValue = (value) => {
+	return {
+		type: INCREMENT_BY_VALUE,
+		payload: value,
+	}
+}
 
 // create reducer for counter
 
@@ -40,6 +54,17 @@ const counterReducer = (state=initialCounterState, action) =>{
 				// ...state multipul state এর ক্ষেত্রে আমরা spread করে নিতে পারি।  তারপর যে state নিয়ে কাজ করবো সেটা define করে দিবো
 				...state,
 				count: state.count - 1 
+			};
+		case RESET:
+			return {
+				...state,
+				count: 0
+			};
+		//for payload
+		case INCREMENT_BY_VALUE:
+			return {
+				...state,
+				count: state.count + action.payload
 			}
 		default:
 			 state
@@ -58,10 +83,5 @@ store.subscribe(()=>{
 
 //action dispatch
 
-store.dispatch(incrementCounter())
-store.dispatch(incrementCounter())
-store.dispatch(incrementCounter())
-store.dispatch(incrementCounter())
-store.dispatch(incrementCounter())
-store.dispatch(incrementCounter())
-store.dispatch(decrementCounter())
+store.dispatch(incrementCounterByValue(20))
+store.dispatch(incrementCounterByValue(10))
