@@ -1,4 +1,5 @@
 import CounterView from "./features/counter/CounterView"
+import PostsView from "./features/posts/PostsView"
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         Counter App
       </h1>
       <CounterView></CounterView>
+      <PostsView></PostsView>
 
     </>
   )
