@@ -1,5 +1,5 @@
 {
-  "prodects": [
+  "products": [
     {
       "id": "2",
       "title": "Stainless Steel Water Bottle",
@@ -17,12 +17,6 @@
       "title": "4K Smart LED TV",
       "description": "50-inch 4K Ultra HD smart TV with streaming apps, voice control, and HDR support.",
       "price": 499.99
-    },
-    {
-      "id": "5",
-      "title": "Fitness Tracker Watch",
-      "description": "Waterproof fitness tracker with heart rate monitoring, GPS, and sleep tracking.",
-      "price": 89.99
     },
     {
       "id": "6",
@@ -55,10 +49,16 @@
       "price": "52"
     },
     {
-      "id": "K3y7nuOCuoM4tMBHoF6Uj",
-      "title": "fs",
-      "description": "dfs",
-      "price": "52"
+      "id": "lHyR7sHlkhUeQURA8umZv",
+      "title": "fsdf",
+      "description": "fdsf",
+      "price": "544545"
+    },
+    {
+      "id": "Od2Kz_WR2WcR-3yLZnP3d",
+      "title": "fsdf",
+      "description": "fdsf",
+      "price": "544545"
     }
   ]
 }
