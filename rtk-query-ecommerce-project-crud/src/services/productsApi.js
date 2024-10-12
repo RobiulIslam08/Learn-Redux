@@ -37,8 +37,19 @@ export const productsApi = createApi({
 				type: 'product',
 				id: 'LIST'
 			}]
-		})
+		}),
+		updateProducts: builder.mutation({
+			query: ({id,updatedProduct}) => ({
+				url: `products/${id}`, // Fix the key 'url' and set the correct endpoint
+				method: 'PUT',
+				body: updatedProduct
+			}),
+			invalidatesTags: (results, error, id) => [{
+				type: 'product',
+				id
+			}]
+		}),
 	})
 })
 
-export const {useGetProductsQuery, useDeleteProductsMutation, useAddProductsMutation} = productsApi
+export const {useGetProductsQuery, useDeleteProductsMutation, useAddProductsMutation, useUpdateProductsMutation} = productsApi
